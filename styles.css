@@ -1,0 +1,185 @@
+/* ===== Root Variables for Easy Theming ===== */
+:root {
+  --primary-color: #00784e;
+  --primary-dark: #005c3a;
+  --error-color: red;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Page Layout ===== */
+body {
+  background-image: url('../contact.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== Contact Form ===== */
+.contact-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 4px solid white;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.contact-form h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Name Row ===== */
+.name-row {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .name-row {
+    flex-direction: column;
+  }
+}
+
+/* ===== Input Groups ===== */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.input-group span {
+  color: var(--error-color);
+}
+
+/* ===== Shared Input Styles ===== */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* ===== Hint Text ===== */
+.hint-text {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.2rem;
+  opacity: 1;
+  transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+input:focus + .hint-text,
+textarea:focus + .hint-text {
+  color: var(--primary-color);
+}
+
+.hint-hidden {
+  opacity: 0;
+}
+
+/* ===== Textarea ===== */
+textarea {
+  resize: none;
+}
+
+/* ===== Radio Buttons ===== */
+.radio-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-group label {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.radio-group label:hover {
+  background-color: #f0f0f0;
+}
+
+/* ===== Checkbox ===== */
+.checkbox-group {
+  font-size: 0.9rem;
+}
+
+/* ===== Submit Button ===== */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ===== Success Message ===== */
+.success-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1e3d36;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  animation: slideDown 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
